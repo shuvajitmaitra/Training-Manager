@@ -3,8 +3,10 @@ import Navbar from "../../Components/Navbar";
 
 const Root = () => {
   return (
-    <div>
-        <Navbar></Navbar>
+    <div className="relative ">
+       <div className="absolute w-full">
+       <Navbar></Navbar>
+       </div>
       <Outlet></Outlet>
     </div>
   );

@@ -2,7 +2,42 @@
     {
         "id": 1,
         "title": "Modern Robotics: Mechanics, Planning, and Control Specialization",
-        "image": "image", 
+        "image": "https://i.ibb.co/Wy2SynT/robotics.jpg", 
+        "price": 2999,
+        "descriptions":"descriptions"
+    },
+    {
+        "id": 2,
+        "title": "Leadership Development Program",
+        "image": "https://i.ibb.co/kxLhbPk/leadership.jpg", 
+        "price": 2999,
+        "descriptions":"descriptions"
+    },
+    {
+        "id": 3,
+        "title": "Soft-skill Training",
+        "image": "https://i.ibb.co/5KdWhL5/softskills.jpg", 
+        "price": 2999,
+        "descriptions":"descriptions"
+    },
+    {
+        "id": 4,
+        "title": "Artificial Intelligence Training",
+        "image": "https://i.ibb.co/BCn1V9b/artificial-intelligance.jpg", 
+        "price": 2999,
+        "descriptions":"descriptions"
+    },
+    {
+        "id": 5,
+        "title": "Communication skill improvement Training",
+        "image": "https://i.ibb.co/ZSxhP9F/communication.jpg", 
+        "price": 2999,
+        "descriptions":"descriptions"
+    },
+    {
+        "id": 6,
+        "title": "Importance of Mental health Training",
+        "image": "https://i.ibb.co/jhtW4XC/mental-health.jpg", 
         "price": 2999,
         "descriptions":"descriptions"
     }
