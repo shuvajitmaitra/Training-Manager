@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Banner from "../../Components/Banner/Banner";
 import { authContext } from "../../AuthProvider/AuthProvider";
 import Service from "../../Components/Service/Service";
+import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
   const { services } = useContext(authContext);
@@ -16,6 +17,7 @@ const Home = () => {
           ></Service>
         ))}
       </div>
+      <Footer></Footer>
     </div>
   );
 };

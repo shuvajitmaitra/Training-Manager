@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   return (
@@ -35,7 +36,9 @@ const Login = () => {
             <button className="btn btn-primary rounded">Login</button>
           </div>
         <h2 className="mt-2">Do not have any account? <Link to="/register"><button className="btn-link">Register</button></Link></h2>
+        <div className="text-4xl mt-3 block left-0 right-0 mx-auto">
         <FcGoogle/>
+        </div>
         </form>
       </div>
     </div>

@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Services from "../Pages/Services/Services";
 import Blog from "../Pages/Blog/Blog";
 import Contact from "../Pages/Contact/Contact";
+import ServiceDetails from "../Components/ServiceDetails/ServiceDetails";
 
 const Router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/view-details/:id",
+        element: <ServiceDetails></ServiceDetails>,
       },
     ],
   },
