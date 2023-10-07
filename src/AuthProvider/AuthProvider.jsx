@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const createUser = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
     });
   }, []);
 
-console.log(33, user);
+// console.log(33, user);
 
   const authInfo = {
     user,

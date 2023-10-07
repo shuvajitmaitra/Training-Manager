@@ -1,21 +1,48 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Register = () => {
   const { createUser } = useContext(authContext);
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
   const handleRegisterBtn = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    const regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&`#^(){}.])[0-9a-zA-Z@$!%*?&`#^(){}.]{6,}$/;
+
+    if (!regExp.test(password)) {
+   
+      return setError("Invalid password");
+    }
+    setError("");
+    e.target.reset();
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+    .then(() => {
+      Swal.fire(
+        'The Internet?',
+        'Login successfully!',
+        'success'
+      )
+    })
+    .catch((error) => {
+      Swal.fire(
+        'The Internet?',
+        `${error.message}`,
+        'success'
+      )
+  
+    });
   };
 
   return (
@@ -47,6 +74,7 @@ const Register = () => {
             <input
               type="email"
               name="email"
+              onChange={handleEmail}
               placeholder="Enter Email"
               className="input input-bordered rounded"
               required
@@ -59,11 +87,13 @@ const Register = () => {
             <input
               type="password"
               name="password"
+              onChange={handlePassword}
               placeholder="Enter Password"
               className="input input-bordered rounded"
               required
             />
           </div>
+          <p className="text-red-400">{error}</p>
           <div className="form-control mt-6">
             <button
               type="submit"
