@@ -15,6 +15,7 @@ const AuthProvider = ({ children }) => {
   const [services, setServices] = useState([]);
   const [teams, setTeams] = useState([])
   const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/data.json")
@@ -28,16 +29,19 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const logOut =()=>{
+    setLoading(true)
     signOut(auth)
   }
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false)
     });
   }, []);
 
@@ -45,6 +49,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loading,
     createUser,
     logOut,
     services,

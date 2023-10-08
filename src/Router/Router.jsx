@@ -8,6 +8,7 @@ import Blog from "../Pages/Blog/Blog";
 import Contact from "../Pages/Contact/Contact";
 import ServiceDetails from "../Components/ServiceDetails/ServiceDetails";
 import Member from "../Components/Member/Member";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/view-details/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
       },
       {
         path: "/member/:id",
