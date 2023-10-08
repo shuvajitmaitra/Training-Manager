@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'team-background': "url('/src/assets/team-background.png')",
+        'feedback-background': "url('/src/assets/feedback-background.png')",
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

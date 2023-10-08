@@ -7,6 +7,7 @@ import Services from "../Pages/Services/Services";
 import Blog from "../Pages/Blog/Blog";
 import Contact from "../Pages/Contact/Contact";
 import ServiceDetails from "../Components/ServiceDetails/ServiceDetails";
+import Member from "../Components/Member/Member";
 
 const Router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const Router = createBrowserRouter([
       {
         path: "/view-details/:id",
         element: <ServiceDetails></ServiceDetails>,
+      },
+      {
+        path: "/member/:id",
+        element: <Member></Member>,
       },
     ],
   },

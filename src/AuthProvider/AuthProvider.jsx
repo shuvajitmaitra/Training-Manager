@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 
 import PropTypes from "prop-types";
@@ -12,6 +13,7 @@ export const authContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [services, setServices] = useState([]);
+  const [teams, setTeams] = useState([])
   const [user, setUser] = useState([]);
 
   useEffect(() => {
@@ -19,10 +21,19 @@ const AuthProvider = ({ children }) => {
       .then((response) => response.json())
       .then((data) => setServices(data));
   }, []);
+  useEffect(() => {
+    fetch("/team.json")
+      .then((response) => response.json())
+      .then((data) => setTeams(data));
+  }, []);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
+  const logOut =()=>{
+    signOut(auth)
+  }
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -35,7 +46,9 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     user,
     createUser,
+    logOut,
     services,
+    teams
   };
   return (
     <authContext.Provider value={authInfo}>{children}</authContext.Provider>

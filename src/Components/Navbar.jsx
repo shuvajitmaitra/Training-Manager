@@ -1,8 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png"
+import { useContext } from "react";
+import { authContext } from "../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
+  const {user,logOut} = useContext(authContext)
+  
+  
+
     const navLink = (
         <>
           <li>
@@ -41,8 +47,14 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end gap-3 ">
-   <Link to="/login"> <button className="btn capitalize bg-[#A8DF8E] btn-sm rounded">Login</button></Link>
-   <Link to="/register"> <button className="btn capitalize bg-[#FFE5E5] btn-sm rounded" >Join Us</button></Link>
+    {
+      user ? 
+     <button onClick={()=>{logOut()}} className="btn capitalize bg-[#A8DF8E] btn-sm rounded">Sign Out</button>
+      :
+    <>
+      <Link to="/login"> <button className="btn capitalize bg-[#A8DF8E] btn-sm rounded">Login</button></Link>
+      <Link to="/register"> <button className="btn capitalize bg-[#FFE5E5] btn-sm rounded" >Join Us</button></Link></>
+    }
   </div>
 </div>
     );
