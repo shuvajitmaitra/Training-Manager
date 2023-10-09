@@ -1,10 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(authContext);
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   const navLink = (
     <>
@@ -33,7 +39,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#F3FDE8] fixed md:px-10">
+    <div data-aos="fade-down" className="navbar bg-[#F3FDE8] fixed md:px-10 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label

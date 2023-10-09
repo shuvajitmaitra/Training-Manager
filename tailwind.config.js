@@ -9,6 +9,7 @@ export default {
       backgroundImage: {
         'team-background': "url('/src/assets/team-background.png')",
         'feedback-background': "url('/src/assets/feedback-background.png')",
+        'banner-background': "url('/src/assets/banner.png')",
       }
     },
   },

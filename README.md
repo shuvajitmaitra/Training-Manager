@@ -1,8 +1,10 @@
-# React + Vite
+`Website Name: ` EduEvent Mentor
+`Live Link: `  https://training-manager-io.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Dynamically data load in the service section
+- Private route if user log in then some route will be visible
+- Email and password based Authentication.
+- Google base Authentication
+- Team section also clicking on any member you can see member details
+- Feedback section
+- Responsiveness
