@@ -5,7 +5,7 @@ import { authContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { userSignIn } = useContext(authContext);
+  const { userSignIn , googleSignIn} = useContext(authContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -25,6 +25,7 @@ const Login = () => {
         )
         console.log(location.state);
         navigate(location.state ? location.state : "/");
+        e.target.reset();
       })
       .catch((error) => {
         Swal.fire(
@@ -35,17 +36,38 @@ const Login = () => {
        console.log(error.message);
       });
 
-      e.target.reset();
   };
+
+  const handleGoogleSignIn = () =>{
+    googleSignIn()
+    .then(() => {
+      Swal.fire(
+        'Login successfully!',
+        '',
+        'success'
+      )
+      console.log(location.state);
+      navigate(location.state ? location.state : "/");
+    })
+    .catch((error) => {
+      Swal.fire(
+        `${error.message}`,
+        '',
+        'error'
+      )
+     
+    });
+
+  }
   return (
     <div className="flex h-screen justify-center items-center">
-      <div className="flex-1 bg-blue-400 h-full flex justify-center items-center">
+      <div className="flex-1 bg-blue-400 h-full hidden lg:flex justify-center items-center">
         <h2 className="text-3xl font-bold">Welcome back</h2>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 mt-32 lg:mt-0">
         <form
           onSubmit={handleSignIn}
-          className="card-body w-3/4 mx-auto"
+          className="card-body md:w-3/4 mx-auto"
         >
           <h3 className="text-xl font-semibold">Log In</h3>
           <div className="form-control">
@@ -81,8 +103,10 @@ const Login = () => {
               <button className="btn-link">Register</button>
             </Link>
           </h2>
-          <div className="text-4xl mt-3 block left-0 right-0 mx-auto">
+          <div onClick={handleGoogleSignIn} className="text-4xl mt-3 w-full flex items-center justify-center text-black bg-[#A8DF8E] rounded-full py-2">
+
             <FcGoogle />
+            <h2 className="text-xl ml-2">login with Google</h2>
           </div>
         </form>
       </div>

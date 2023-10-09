@@ -1,44 +1,45 @@
 [
+   
     {
         "id": 1,
-        "title": "Modern Robotics: Mechanics, Planning, and Control Specialization",
-        "image": "https://i.ibb.co/Wy2SynT/robotics.jpg", 
-        "price": 2999,
-        "descriptions":"descriptions"
+        "title": "Career Fair",
+        "image": "https://i.ibb.co/hZh2yFk/Job-Fair.jpg", 
+        "price": 299,
+        "descriptions":"Organizing a successful job fair requires attention to detail, creativity and strategic planning. A job fair is an opportunity for prospective employers to find a capable workforce. At the same time, job seekers are able to network with hiring officials. Since a job fair is a large event with a variety of moving parts, it is important to have a strong planning group to provide support."
     },
     {
         "id": 2,
-        "title": "Leadership Development Program",
-        "image": "https://i.ibb.co/kxLhbPk/leadership.jpg", 
-        "price": 2999,
-        "descriptions":"descriptions"
+        "title": "Science Fair Program",
+        "image": "https://i.ibb.co/0qc2Jps/science-fair.jpg", 
+        "price": 299,
+        "descriptions":"A successful science fair requires a lot of work, which takes time. Do Not try to do all the work yourself. Hopefully the following information will be enough for you to plan ahead so you can delegate work to others. Remember, you are not a magician. Ask for help at the start of the project. Also, make sure that your workers understand exactly what is expected of them."
     },
     {
         "id": 3,
-        "title": "Soft-skill Training",
-        "image": "https://i.ibb.co/5KdWhL5/softskills.jpg", 
-        "price": 2999,
-        "descriptions":"descriptions"
+        "title": "Training Program",
+        "image": "https://i.ibb.co/Sd5x5mf/training-program.jpg", 
+        "price": 199,
+        "descriptions":"A training program is a planned sequence and combination of activities designed to equip employees with knowledge and skills to become better professionals. Each training program is aimed at achieving specific business goals"
     },
     {
         "id": 4,
-        "title": "Artificial Intelligence Training",
-        "image": "https://i.ibb.co/BCn1V9b/artificial-intelligance.jpg", 
-        "price": 2999,
-        "descriptions":"descriptions"
+        "title": "Workshops and Webinar",
+        "image": "https://i.ibb.co/3Mm9QPf/workshop-webinner.jpg", 
+        "price": 199,
+        "descriptions":"Event Management Webinars – Our team of event tech experts and industry guest speakers debate and discuss the key trends and research findings around the event tech topics that matter most to organisers, including everything you need to know on the emergence of virtual and hybrid events."
     },
     {
         "id": 5,
-        "title": "Communication skill improvement Training",
-        "image": "https://i.ibb.co/ZSxhP9F/communication.jpg", 
-        "price": 2999,
-        "descriptions":"descriptions"
+        "title": "Debating Program",
+        "image": " https://i.ibb.co/C1zztfz/debates.jpg", 
+        "price": 399,
+        "descriptions":"we are passionate about cultivating the art of debate and fostering critical thinking skills. With years of experience in event management, we specialize in curating and orchestrating unforgettable debate programs that inspire, educate, and empower."
     },
     {
         "id": 6,
-        "title": "Importance of Mental health Training",
-        "image": "https://i.ibb.co/jhtW4XC/mental-health.jpg", 
-        "price": 2999,
-        "descriptions":"descriptions"
+        "title": "Educational Conference",
+        "image": "https://i.ibb.co/z2DgRDV/educational-confarence.jpg", 
+        "price": 399,
+        "descriptions":"Conferences are designed to give you access to leading, inspirational figures in your field of interest, With years of experience in event management, we specialize in curating and orchestrating unforgettable debate programs that inspire, educate, and empower."
     }
 ]

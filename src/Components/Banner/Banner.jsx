@@ -2,7 +2,7 @@
 import banner from "../../assets/event-management.jpg"
 const Banner = () => {
     return (
-        <div>
+        <div >
             <img src={banner} className="h-screen w-full" />
         </div>
     );
