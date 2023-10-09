@@ -1,49 +1,38 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../AuthProvider/AuthProvider";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(authContext);
-const navigate = useNavigate()
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
   const [error, setError] = useState("");
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
   const handleRegisterBtn = (e) => {
     e.preventDefault();
-    const regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&`#^(){}.])[0-9a-zA-Z@$!%*?&`#^(){}.]{6,}$/;
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    const regExp =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&`#^(){}.])[0-9a-zA-Z@$!%*?&`#^(){}.]{6,}$/;
 
     if (!regExp.test(password)) {
-   
       return setError("Invalid password");
     }
     setError("");
-    e.target.reset();
+
+
     createUser(email, password)
-    .then(() => {
-      Swal.fire(
-        'The Internet?',
-        'Login successfully!',
-        'success'
-      )
-      navigate("/")
-    })
-    .catch((error) => {
-      Swal.fire(
-        'The Internet?',
-        `${error.message}`,
-        'success'
-      )
-  
-    });
+      .then(() => {
+        Swal.fire("Registration successfully!", "", "success");
+        console.log(location.state);
+        navigate(location.state ? location.state : "/");
+      })
+      .catch((error) => {
+        Swal.fire("", `${error.message}`, "error");
+      });
+    e.target.reset();
   };
 
   return (
@@ -63,6 +52,7 @@ const navigate = useNavigate()
             </label>
             <input
               type="text"
+              name="text"
               placeholder="Enter Name"
               className="input input-bordered rounded"
               required
@@ -75,7 +65,6 @@ const navigate = useNavigate()
             <input
               type="email"
               name="email"
-              onChange={handleEmail}
               placeholder="Enter Email"
               className="input input-bordered rounded"
               required
@@ -88,7 +77,6 @@ const navigate = useNavigate()
             <input
               type="password"
               name="password"
-              onChange={handlePassword}
               placeholder="Enter Password"
               className="input input-bordered rounded"
               required
